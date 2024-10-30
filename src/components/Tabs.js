@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './Tabs.css';
-import LogTable from '../LogTable/LogTable';
-import MovieSearch from '../MovieSearch/MovieSearch';
-import TabButton from '../TabButton/TabButton';
+import LogTable from './LogTable';
+import MovieSearch from './MovieSearch';
+import TabButton from './TabButton';
 
 function Tabs() {
     const [activeTab, setActiveTab] = useState('consulta');

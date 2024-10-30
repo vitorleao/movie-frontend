@@ -1,29 +1,30 @@
 import React from 'react';
-import './MovieSearch.css';
+import HeaderTwo from './HeaderTwo';
+import TextInput from './TextInput';
+import SearchButton from './SearchButton';
+import InlineText from './InlineText';
 
 const MovieSearch = ({ name, setName, movieTitle, setMovieTitle, handleSearch, movieDetails, error }) => (
     <div>
-        <h2>Busca</h2>
+        <HeaderTwo>Busca</HeaderTwo>
         <form onSubmit={handleSearch}>
-            <input
-                type="text"
-                placeholder="Seu Nome"
+            <TextInput
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+                placeholder="Digite seu nome"
             />
-            <input
-                type="text"
-                placeholder="Nome do Filme"
+            <TextInput
                 value={movieTitle}
                 onChange={(e) => setMovieTitle(e.target.value)}
+                placeholder="Digite o nome do filme"
             />
-            <button type="submit">Buscar</button>
+            <SearchButton>Buscar</SearchButton>
         </form>
         {error && <p>{error}</p>}
         {movieDetails && (
             <div>
-                <p><strong>Filme:</strong> {movieDetails.movie}</p>
-                <p><strong>Ano:</strong> {movieDetails.year}</p>
+                <InlineText label="Filme" text={movieDetails.movie} />
+                <InlineText label="Ano" text={movieDetails.year} />
             </div>
         )}
     </div>

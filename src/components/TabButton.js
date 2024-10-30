@@ -1,5 +1,4 @@
 import React from 'react';
-import './TabButton.css';
 
 const TabButton = ({ onClick, isActive, children }) => (
     <div
